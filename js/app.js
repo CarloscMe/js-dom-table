@@ -6,123 +6,76 @@ click.addEventListener("click", table, { once: true } );
 
 function table (){
 
-let table = document.createElement("table"); // se crea el elemento table //
+    const crearTabla = (datos) => {
+        const table = document.createElement("table");
+        table.classList.add("table");
+      
+        const cabecera = document.createElement("thead");
+        cabecera.classList.add("thead");
+        table.appendChild(cabecera);
+      
+        const filaCabecera = document.createElement("tr");
+        cabecera.appendChild(filaCabecera);
+      
+        const cabeceraColumnas = ["Nombre", "Versión", "Algo así"];
+        cabeceraColumnas.forEach((columna) => {
+          const celdaCabecera = document.createElement("th");
+          celdaCabecera.innerText = columna;
+          filaCabecera.appendChild(celdaCabecera);
+        });
+      
+        const cuerpo = document.createElement("tbody");
+        cuerpo.classList.add("tbody");
+        table.appendChild(cuerpo);
+      
+        datos.forEach((fila) => {
+          const filaCuerpo = document.createElement("tr");
+          cuerpo.appendChild(filaCuerpo);
+      
+          fila.forEach((celda) => {
+            const celdaCuerpo = document.createElement("td");
+            celdaCuerpo.innerText = celda;
+            filaCuerpo.appendChild(celdaCuerpo);
+          });
+        });
+      
+        const pie = document.createElement("tfoot");
+        pie.classList.add("tfoot");
+        table.appendChild(pie);
+      
+        const filaPie = document.createElement("tr");
+        pie.appendChild(filaPie);
 
-table.classList.add("table");  // se le asigna una clase //
+        const pieColumnas = ["Resultado", "390.2", "En sí"];
+        pieColumnas.forEach((columna) => {
+          const celdaPie = document.createElement("td");
+          celdaPie.innerText = columna;
+          filaPie.appendChild(celdaPie);
+        });
 
-document.body.appendChild(table); // este metodo o funcion es para agregarlo al body osea indica que es hijo //
+        const filaPie2 = document.createElement("tr");
+        pie.appendChild(filaPie2);
+      
 
-let thead = document.createElement("thead");
+        const pieColumnas2 = ["ok", "bueno", "3.0"];
+        pieColumnas2.forEach((columna) => {
+          const celdaPie2 = document.createElement("td");
+          celdaPie2.innerText = columna;
+          filaPie2.appendChild(celdaPie2);
+        });
+      
+        return table;
+      };
+      
+      const datos = [
+        ["Mario Bros", "1.02", "Sí"],
+        ["Sonic", "3.0", "Más o menos"],
+        ["Aña", "DD", "Ohhyeah"],
+        ["Nos", "Dad", "Oahhyeah"]
+      ];
 
-thead.classList.add("thead");
-
-table.appendChild(thead);
-
-let thead_item = document.createElement("tr");
-
-thead.appendChild(thead_item);
-
-let thead_item_th = ["nombre", "version", "algo asi"];
-
-thead_item_th.forEach((text) => {
-
-    let item_th = document.createElement("th");
-
-    item_th.innerText = text;
-
-    thead_item.appendChild(item_th)
-}
-);
-
-let tbody = document.createElement("tbody");
-
-tbody.classList.add("tbody");
-
-table.appendChild(tbody);
-
-let tbody_item = document.createElement("tr");
-
-tbody.appendChild(tbody_item);
-
-let tbody_item_td1 = ["mario broos", "1.02", "si"];
-
-tbody_item_td1.forEach((text) =>{
-
-    let item_td1 = document.createElement("td");
-
-    item_td1.innerText = text;
-
-    tbody_item.appendChild(item_td1);
-}
-);
-
-let tbody_item2 = document.createElement("tr");
-
-tbody.appendChild(tbody_item2);
-
-let tbody_item_td2 = ["sonic", "3.0", "mas o menos"];
-
-tbody_item_td2.forEach((text) =>{
-
-    let item_td2 = document.createElement("td");
-
-    item_td2.innerText = text;
-
-    tbody_item2.appendChild(item_td2)
-}
-);
-
-let tbody_item3 = document.createElement("tr");
-
-tbody.appendChild(tbody_item3);
-
-let tbody_item_td3 = ["aña", "dd", "ohhyeah"];
-
-tbody_item_td3.forEach((text) =>{
-
-    let item_td3 = document.createElement("td");
-
-    item_td3.innerText = text;
-
-    tbody_item3.appendChild(item_td3)
-}
-);
-
-let tbody_item4 = document.createElement("tr");
-
-tbody.appendChild(tbody_item4);
-
-let tbody_item_td4 = ["nos", "dad", "oahhyeah"];
-
-tbody_item_td4.forEach((text) =>{
-
-    let item_td4 = document.createElement("td");
-
-    item_td4.innerText = text;
-
-    tbody_item4.appendChild(item_td4);
-}
-);
-
-let tfoot = document.createElement("tfoot");
-
-tfoot.classList.add("tfoot");
-
-table.appendChild(tfoot);
-
-let tfoot_item = document.createElement("tr");
-
-tfoot.appendChild(tfoot_item);
-
-let tfoot_item_td = ["resultado", "390.2", "en si"];
-
-tfoot_item_td.forEach((text) =>{
-
-    let item_td5 = document.createElement("td");
-
-    item_td5.innerText = text;
-
-    tfoot_item.appendChild(item_td5);
-}
-);
+      const table = crearTabla(datos);
+      document.body.appendChild(table);
 };
+
+// mejorar este codigo para que sea mas facil la creacion de tr//

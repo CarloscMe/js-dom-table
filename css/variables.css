@@ -1,0 +1,11 @@
+:root{
+    --color-body: rgb(0, 233, 250);
+    --color-body2: rgb(255, 255, 255);
+}
+
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    text-transform: capitalize;
+}
