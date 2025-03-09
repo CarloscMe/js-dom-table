@@ -65,7 +65,7 @@ function table() {
     ["Sonic", "3.0", "estable"],
     ["halo", "10.29", "finalizado"],
     ["minecraft", "1.20", "compatible"],
-    ["devil my cry", "4.0", "finalizado"],
+    ["devil may cry", "4.0", "finalizado"],
     ["roblox", "389.01", "compatible"]
   ];
 
